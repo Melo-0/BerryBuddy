@@ -4,37 +4,154 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--importing Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>BB-Catalog</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+            crossorigin="anonymous"></script>
+
+
+    <title>BerryBuddy - Catalog</title>
+    <link rel="icon" href="assets/berrybuddylogo.png" type="image/x-icon">
+
+
 </head>
 <body>
-  <!--Navigation bar from bootstrap-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <img class="navbar-brand" src="berrybuddylogo.png" height="42px" width="30px">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="nav-link active" aria-current="page" href="index.html">
+            <img class="navbar-brand" src="assets/berrybuddylogo.png" width="30px" height="42px"  ></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="identify.html">Identify</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="catalog.html">Catalog</a>
-              </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="identify.html">Identify</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="catalog.html">Catalog</a>
+                </li>
             </ul>
-          </div>
         </div>
-    </nav>
-    <h1>Catalog page</h1>
+    </div>
+</nav>
+
+<h1 class="text-center fw-bold mt-3">Catalog </h1>
+
+
+<link href="https://cdn.jsdelivr.net/npm/tom-select@2.0.0-rc.4/dist/css/tom-select.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.0.0-rc.4/dist/js/tom-select.complete.min.js"></script>
+
+<div class="container  " style="max-width: 18rem;">
+    <div class="pt-5  ">
+        <label for="select-berry">
+
+        </label><select id="select-berry" placeholder="Search for berry">
+        <option value="">Search for berry</option>
+        <option value="Blueberry"> Blueberry</option>
+        <option value="Cherry"> Cherry</option>
+        <option value="Coffeeberry"> Coffeeberry</option>
+        <option value="Cranberry"> Cranberry</option>
+        <option value="Currant"> Currant</option>
+        <option value="Elderberry"> Elderberry</option>
+        <option value="Gooseberry"> Gooseberry</option>
+        <option value="Grape"> Grape</option>
+        <option value="Juniper"> Juniper</option>
+        <option value="Madrone"> Madrone</option>
+        <option value="Nightshade"> Nightshade</option>
+        <option value="Oregon Grape"> Oregon Grape</option>
+        <option value="Prickly Pear"> Prickly Pear</option>
+        <option value="Raspberry"> Raspberry</option>
+        <option value="Rose Hip"> Rose Hip</option>
+        <option value="Salal"> Salal</option>
+        <option value="Serviceberry"> Serviceberry</option>
+        <option value="Strawberry"> Strawberry</option>
+        <option value="Toyon"> Toyon</option>
+
+    </select>
+    </div>
+</div>
+
+
+<section class="cards justify-content-center d-flex mt-5  p-3">
+    <div class="card text-white bg-dark mb-3 collapse " id="berryCard" style="max-width: 44rem;">
+        <img id="ourBerry" src="" class="pop" data-bs-toggle="modal" data-bs-target="#imagemodal"
+             style="width: 100%;  height: auto">
+        <div class="card-header">
+            Quote
+        </div>
+
+        <div class="card-body">
+
+
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="imagemodal" role="dialog" tabindex="-1" aria-labelledby="imagemodal" aria-hidden="true">
+    <div class="modal-dialog modal-xl ">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <img src="" class="imagepreview" style="width: 100%;">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    // Gets card ele
+    let cardCollapse = new bootstrap.Collapse(document.getElementById('berryCard'), {
+        toggle: false
+    })
+
+    // Gets image tag for popOut
+    const popOut = document.querySelector('.imagepreview')
+
+    // Sets Tom Select when changes then shows card and adds berry title, description, image
+    new TomSelect("#select-berry", {
+        allowEmpty: true,
+        onChange: function () {
+
+            if (arguments[0]){
+                cardCollapse.show()
+                ourBerry.src = `./assets/AllBerries/${arguments[0]}.jpg`
+                document.querySelector('.card-header').textContent = arguments[0]
+                document.querySelector('.card-text').innerHTML = lookup[arguments[0]]
+                popOut.src = `./assets/AllBerries/${arguments[0]}.jpg`
+            }
+            else{
+                cardCollapse.hide()
+            }
+        },
+        create: false,
+    });
+
+    // sets list to hold obj
+    let lookup = {};
+    // Read berry info that's JSON
+    let berryInfo = JSON.parse('[{"name":"Gooseberry","description":"Gooseberries are members of the Ribes genus and look very<br>    similar to currants, though there are some important distinctions. They are both perennial<br>    bushes with somewhat vining stalks that arise from the roots. When cut back or<br>    burned back, the plant will send up many very straight stalks.<br>    The stalks of the gooseberries are covered in spines. The fruits of goose-berry are<br>    also covered in little spines. Currants, on the other hand, have no spines on the stalk<br>    or fruit. But both plants have the very same growth patterns, and leaves that look<br>    like a three-lobed mitten.<br>    <br>    Habitats: Mountains, in chaparral, on flat plains, along rivers.<br>    <br>    Range: Common locally.<br>    <br>    Tools: No special tools needed to harvest, though gloves are recommended.<br>    <br>    "},{"name":"Coffeeberry","description":"California coffeeberry is a member of the Buckthorn family<br>    (Rhamnaceae). There are fifty to fifty-two genera of the<br>    Buckthorn family worldwide, with about 950 species.<br>    There are fifty species of the Frangula genus, with three<br>    species found in California. Aside from the two species listed<br>    above, there is Frangula rubra, or Sierra coffeeberry.<br>    Description: F. californica and its six subspecies are most<br>    common in Southern California; F. purshiana and its three<br>    subspecies are found more commonly in the northern part of<br>    California. These are small shrubs to large trees, depending on<br>    location and species. F. californica is typically no more than<br>    8 feet tall, whereas F. purshiana is significantly taller, very<br>    treelike. The leaves are alternately arranged, an inch or two<br>    in length, typically bright green, narrowly oblong, with tiny<br>    teeth on the margins.<br>    <br>    Uses: Seeds are used for a beverage and bark is used for a laxative.<br>    <br>    Habitats: Scattered widely in chaparral and woodland but generally closer to the coast.<br>    <br>    Tools: No special tools needed to collect fruits.<br>    "},{"name":"Elderberry","description":"The elderberry is a member of the Muskroot family(Adoxaceae). <br>    This family has five genera and about 200<br>    species worldwide. Only two of the genera are represented<br>    in California, one of which is Sambucus. There are twenty<br>    species of Sambucus worldwide, and according to the<br>    latest classification, you\'ll find four types of elderberries in<br>    California:<br>    <br>    •S. nigra, subspecies caerulea (Mexican elder or blue elderberry), found at lower<br>    elevations, throughout the chaparral. The fruit is nearly black when ripe, with a<br>    white glaucous coating making it appear blue.<br>    •S. racemosa, which has red or purplish-black fruits<br>    •S. racemosa var. melanocarpa (black elderberry), found at higher locations and<br>    having purplish-black fruits<br>    • S. racemosa var. racemosa (red elderberry), having red fruits, and preferring moist<br>    areas<br>    <br>    Uses: Flowers are used for tea and food; berries for \\"raisins,\\" jam, jelly, and juice.<br>    <br>    Habitats: Chaparral, mountains, desert, urban fringes, and generally in most<br>    environments.<br>    <br>    Range: Throughout California.<br>    <br>    Tools: Snippers and bags.<br>    <br>    "},{"name":"Grape","description":"Native wild grapes belong to the Grape family (Vitaceae). The<br>    Grape family has about fifteen genera and about 800 species<br>    worldwide. In California, this family is represented by only<br>    two genera, Parthenocissus (the Virginia creeper) and Vitis<br>    (grapes). Though there are sixty-five known species of Vitis, it<br>    is only represented in California by three species, one of which<br>    is the introduced cultivated grape (V. vinifera). The other two<br>    are the California wild grape (V. californica) and the desert<br>    wild grape (V. girdiana).<br>    <br>    Uses: Fruits are eaten raw or cooked and the leaves are used in Middle Eastern cooking.<br>    <br>    Habitats: Prefers riparian areas and moist, shady canyons.<br>    <br>    Range: Widespread in localized areas.<br>    <br>    Tools: Clippers and bags.<br>    <br>    "},{"name":"Cherry","description":"Wild cherries are members of the Rose family (Rosaceae),<br>    which contains 110 genera and 3,000 species worldwide.<br>    Species from forty-five of the genera are found in California.<br>    <br>    The four wild cherries in California are:<br>    • Hollyleaf cherry (Prunus ilicifolia, subspecies ilicifolia)<br>    • Catalina Island cherry (Prunus ilicifolia, subspecies lyonii)<br>    •Bitter cherry (P. emarginata)<br>    • Western chokecherry (P. virginiana var. demissa)<br>    <br>    The first two wild cherries listed above are evergreen trees or bushes in<br>    California. The leaves are stiff and shiny, with teeth on the margins (depending on<br>    species). Bitter cherry and western chokecherry are deciduous.<br>    One way to identify the plant is to crush the leaves, wait a few seconds, and<br>    then smell them. They will have a distinct aroma of bitter almond extract, your<br>    clue that the leaf contains cyanide (hydrocyanic acid). The fruits are very much like<br>    cultivated cherries, except the color is darker red, almost maroon, sometimes even<br>    darker. The flesh layer can be very thin in dry years, and thicker in the seasons<br>    following a good rain. Like domestic cherries, there is a thin shell around the meaty<br>    inside of the seed.<br>    <br>    Uses: The flesh of the fruit is used in jams and jellies, and even cough syrup; the<br>    meat of the large seed can be processed into a flour.<br>    <br>    Habitats: Chaparral, coastal ranges, riparian zones, urban fringes.<br>    <br>    Range: Wild cherries can be found widely throughout the state, often growing in<br>    urban vacant lots and hedgerows.<br>    <br>    Tools: You don\'t need any special tools to collect cherries, just a bag or box.<br>    <br>    "},{"name":"Currant","description":"Currants are members of the Ribes genus and look very<br>    similar to gooseberries. They are both perennial<br>    bushes with somewhat vining stalks that arise from the roots. When cut back or<br>    burned back, the plant will send up many very straight stalks.<br>    The stalks of the gooseberries are covered in spines. The fruits of goose-berry are<br>    also covered in little spines. Currants, on the other hand, have no spines on the stalk<br>    or fruit. But both plants have the very same growth patterns, and leaves that look<br>    like a three-lobed mitten.<br>    <br>    Habitats: Mountains, in chaparral, on flat plains, along rivers.<br>    <br>    Range: Common locally.<br>    <br>    Tools: No special tools needed to harvest, though gloves are recommended.<br>    <br>    "},{"name":"Ground Cherry","description":"Ground cherry is a member of the Nightshade family<br>    (Solanaceae), which consists of at least seventy-five genera<br>    and about 3,000 species worldwide. Physalis is one of the<br>    thirteen genera of the Nightshade family found in California.<br>    Physalis contains about eighty-five species worldwide, with<br>    seven species (not including varieties) found in California,<br>    four of which are native. <br>    <br>    This is an obvious nightshade plant when you see it. Ground cherry<br>    is a low, sometimes sprawling plant that grows to about a foot tall, maybe taller in<br>    certain circumstances. The leaves are typical lanceolate to ovate, often toothed. The<br>    five-petaled flowers are usually yellow, but sometimes purple. The most obvious<br>    feature of the ground cherry fruit is its enclosure in a papery sheath, giving it one of<br>    its common names, husk tomato.<br>    <br>    Uses: The fruits are eaten when they mature, and are fully ripe in the fall.<br>    Otherwise, they must be cooked.<br>    <br>    Habitats: The native species can be found in desert washes, slopes, rocky flats, etc.<br>    <br>    Range: Desert regions.<br>    <br>    Tools: Bag for collecting.<br>    <br>    "},{"name":"Huckleberry","description":"Huckleberry is a member of the Heath family (Ericaceae).<br>    This family contains about one hundred genera and 3,000<br>    species worldwide. In California, there are twenty-six genera.<br>    The Vaccinium genus includes more than 400 species in the<br>    world, with eight in California. In general, Vaccinium are<br>    referred to as huckleberries, blueberries, cranberries, and even<br>    bilberries, depending on the species. All are native, except V.<br>    macrocarpon, which is the common cranberry.<br>    <br>    These shrubs have alternate evergreen or deciduous leaves, which are<br>    broadly lance-shaped. The stems are trailing to erect. The flower\'s petals generally<br>    number four to five, with a corolla that is cup- or urn-shaped. The fruit could be red<br>    or blue, large or small, and have flattened ends. Generally, the plants with the most<br>    desirable fruits are the smaller shrubs, about 3 feet tall, with larger, sweet, juicy blue<br>    berries measuring about ¼-to ½-inch in diameter.<br>    <br>    Uses: The fruits are edible.<br>    <br>    Habitats: Found in the woods, usually coniferous woods, in clearings, moist areas,<br>    and shaded areas.<br>    <br>    Range: The Vacciniums are forest inhabitants, mostly found in the northern half of<br>    the state and into the Northwest.<br>    <br>    Tools: A basket.<br>    <br>    "},{"name":"Juniper","description":"Juniper is a member of the Cypress family (Cupressaceae),<br>    which has thirty genera and more than 130 species worldwide. Only seven genera<br>    are found in California.There are about sixty-seven species of Junipers in the<br>    Northern Hemisphere. In California, we have just five species of juniper, all<br>     of which are considered native, including the Utah juniper V. osteosperma).<br>     <br>     Junipers are shrubs or small trees with thin peeling bark. The leaves<br>    are scalelike. The seed cone is 5 to 18 millimeters long, more or less round, fleshy<br>    and berrylike, and a shade of blue that matures to brown. The aroma of the cones<br>    has been described as ginlike.<br>    <br>    Sometimes junipers are confused with cypress, but the cypress have larger,<br>    harder cones with angular edges.<br>    <br>    Uses: The berries are used for food and medicine.<br>    <br>    Habitats: Dry slopes, pinyon woodlands, flats, sagebrush areas.<br>    <br>    Range: More common in southern California, and found south into Baja California,<br>    Arizona, and other adjacent states.<br>    <br>    Tools: A bag or basket for collecting.<br>     <br>     "},{"name":"Nightshade","description":" The four related species of nightshade are members of the<br>    Nightshade family (Solanaceae). There are seventy-five genera in the Night-shade<br>    family, and 3,000 species worldwide. Eleven genera--one of which is Solanum- are<br>    found in California. There are approximately 1,500 species of Solanum in the world,<br>    with eighteen found in California. Many are toxic, and many are good foods.<br>    Description: S. americanum (aka S. nodiflorum), S. douglasit, and S. xanti are native<br>    nightshades; S. nigrum is not. S. americanum and S. nigrum are very similar<br>    and sometimes difficult to distinguish from one another. The very young plant<br>    resembles lambsquarters, except that the nightshade doesn\'t have an erect stem.<br>    Rather, it\'s more widely branched. Also, though the individual leaves of both<br>    nightshade and lambsquarters are quite similar, the nightshade lacks the mealy<br>    coating of the lambsquarters\', and lacks the often noticeable red in the axil of<br>    the leaf, which is common in lambsquarters. The five-petaled white to lavender<br>    flower is a very typical Nightshade family flower, resembling the flowers of garden<br>    tomatoes. The fruits begin as tiny BB-size green fruits, and by August ripen into<br>    purplish-black little \\"tomatoes.\\" We\'ve eaten all of the four listed Solanums with no<br>    problems.<br>    <br>    Uses: Fruits are used when ripe, either raw or cooked. Green fruits can be used<br>    if cooked (fried or boiled). The young leaves are boiled and eaten by people from<br>    Mexico (where it is somewhat popular and called \'\\"yerba mora\\"), the Philippines, and<br>    Hong Kong.<br>    <br>    Cautions: Is it possible to confuse these nightshades with toxic species? According<br>    to many, the species we\'ve listed are toxic species, meaning don\'t eat the green,<br>    raw fruits, and don\'t eat the leaves raw. Sickness is likely in either case. There are<br>    individuals who experience sickness when they eat any member of the Night-shade<br>    family, including eggplants, tomatoes, peppers, potatoes, etc.<br>    <br>    Habitats: Common and widespread in chaparral areas, disturbed urban soils, and<br>    wild areas on the fringe of urban areas.<br>    <br>    Range: Widespread throughout much of the state.<br>    <br>    Tools: No special tools are required.   <br>    <br>    "},{"name":"Raspberry","description":"Blackberries and raspberries are members of the Rose family<br>    (Rosacea). The Rose family contains 110 genera and 3,000<br>    species worldwide. Species from forty-five of the genera are<br>    found in California. Raspberries belong to the Rubus genus,<br>    and there are 400 to 750 species of Rubus worldwide. There are<br>    eleven species of Rubus in California (not including varieties).<br>    <br>    The leaves of blackberries and raspberries are palmately divided (like<br>    a hand) into three, five, or seven segments. The vines are twining on the ground or<br>    over low hedges, and are characterized by their thorns, which makes it difficult to<br>    wade too deep into any of the old hedgelike stands of wild blackberries. The flowers<br>    are white and five-petaled, and are followed by the fruits, which are aggregate fruits.<br>    Most people instantly recognize the shape of the blackberry because they\'ve seen it<br>    in the supermarket or in the backyard garden. The aggregate fruit is a collection of<br>    sweet drupelets, with the fruit separating from the flower stalk to form a somewhat<br>    hollow, thimblelike shape.<br>    <br>    Uses: The ripe fruits are eaten fresh, or made into a variety of jams, jellies, and<br>    juices. The leaves are sometimes used medicinally. Made into an infusion, the leaf<br>    tea can be used to treat cases of mild diarrhea. Gargling with an infusion of<br>    blackberry leaf is also good for mouth irritations, such as bleeding gums or sore<br>    throat.<br>    <br>    Habitats: The Rubus species and their kin are fairly widespread and distributed<br>    throughout the state. These vines are at home growing in high elevations, in<br>    chaparral, along dusty trails, along streams, near the beach .. everywhere!<br>    <br>    Range: Blackberries and raspberries prefer areas where sufficient water is supplied.<br>    They have also been widely planted, and survive well in diverse places.<br>    <br>    Tools: Gloves and clippers can be a good idea when harvesting ripe blackberries. You<br>    should also bring shallow baskets that can be stacked, so that the fragile fruits do<br>    not get crushed.<br>    "},{"name":"Serviceberry","description":"Serviceberry is a large shrub or small tree with<br>    deciduous leaves, often forming in dense thickets. The twigs<br>    of this native are glabrous, and the leaf is elliptical to round,<br>    with obvious serrations, generally serrated above the middle<br>    of the leaf. The flowers are five-petaled, white, fragrant, in<br>    clusters of a few to many. The fruit is a pome of two<br>    to five papery segments, berrylike, generally spherical, and<br>    bluish black in color.<br>    <br>    Uses: Berries are edible.<br>    <br>    Habitats: Found in red fir forests and lodgepole pine forests, up to about the 7,000<br>    foot level and occasionally in wetlands. Also found in open areas.<br><br>    Range: Serviceberries are found in the northern two-thirds of the state.<br><br>    Tools: A basket for collecting.<br> <br>    "},{"name":"Strawberry","description":"The leaves are all basal, generally three-lobed, <br>    with each leaflet having fine teeth. It looks just the strawberry<br>    you grow in your garden, but smaller.<br>    Technically, the strawberry is an aggregate accessory fruit,<br>    meaning that the fleshy part is derived not from the plant\'s<br>    ovaries, but from the receptacle that holds the ovaries. In<br>    other words, what we call \\"the fruit\\" (because duh!, it looks<br>    like a fruit) is the receptacle, and all the little seeds on the<br>    outside of the \\"fruit\\" are technically referred to as achenes,<br>    actually one of the ovaries of the flower with a seed inside it.<br>    <br>    Uses: The fruits are eaten.<br>    <br>    Habitats: Wild strawberry prefers higher elevation forests and clearings.<br>    <br>    Range: Found widely throughout the state, though more common in the northern<br>    California.<br>    <br>    Tools: Basket.<br><br>    "},{"name":"Toyon","description":"Toyon can grow to be a medium-size tree, and<br>    is probably most conspicuous in the winter when it\'s covered<br>    with clusters of orange-red fruits. The tree is found in the<br>    chaparral zones, and often planted on the fringes of the<br>    urban areas. The leaves are leathery and ovate, with toothed<br>    margins. The tree is evergreen and can be a large bush or a<br>    small tree. Each flower, which forms in the summer, is white<br>    and five-petaled, about ¼ inch wide. The clusters of orange-<br>    red fruit ripen from about November into January.<br>    <br>    Uses: Berries are cooked, dried, or made into flour.<br>    <br>    Habitats: Chaparral hillsides, canyons, and slopes; sometimes cultivated.<br>    <br>    Range: Found throughout the state, mostly in the western half.<br>    <br>    Tools: Just a bag for collecting the berries.<br>    <br>    "},{"name":"Madrone","description":" Madrone is a shrub or tree with reddish bark that is typically shedding<br>    and curling. The leaves are alternate, leathery, and evergreen. Each leaf is oblong to<br>    ovate, 4 to 5 inches long, with small and shallow serrations. The white or pinkish<br>    flower petals are fused into a very characteristic down-hanging urn shape. The<br>    distinctive fruit is round, about ⅓ to ½ inch diameter, and orange red. The fruit is<br>    papillate, which means it is uniformly covered with small roundish bumps.<br>    <br>    Uses: The fruits are used for food.<br>    <br>    Habitats: Typically found in conifer and oak forests, usually in the lower elevations.<br>    <br>    Range: From approximately Santa Barbara northward, more common the farther<br>    north you go. More common near the coast.<br>    <br>    Tools: A bag or basket<br><br>    "},{"name":"Oregon Grape","description":" This is a low-growing, medium-size shrub, though some are low-<br>    growing and spreading. Leaves are alternately arranged and pinnately compound.<br>    The leaflets are hollylike, with spines along their margins. Flowers are yellow and<br>    formed in racemes. The sepals and the petals are similar, usually in five whorls. The<br>    approximately ¼-inch fruits are bluish to purple berries, and are tightly arranged in<br>    clusters that resemble tiny grapes.<br>    <br>    Uses: Fruits can be eaten, or made into wine, jams, jellies.<br>    <br>    Habitats: Coniferous forests, slopes, canyons, oak woodlands, chaparral.<br>    <br>    Range: Found throughout California, but less common south of Santa Barbara.<br>    <br>    Tools: Collecting bag<br>    <br>    "},{"name":"Prickly Pear","description":" Prickly pear cacti are readily recognized by their flat oval pads, with<br>    spines evenly spaced over their surface. The cacti flower by summer, and then the<br>    fruits mature by August and September. The fruits mature in a variety of colors,<br>    ranging from green (less common) to yellow, orange, red, and purple. Each of these<br>    fruits has a different flavor, and was traditionally used in different recipes.<br>    <br>    Uses: Young pads for food, raw or cooked; fruits for deserts and juices; seeds for<br>    flour. Nearly all species of Opuntia have a long history of being used for food.<br>    <br>    Habitats: Typically found in the desert regions, but also commonly found in<br>    chaparral, dry fields, along the coast, and commonly cultivated.<br>    <br>    Range: Fairly widespread throughout the state, very common in certain areas. like<br>    the desert, chaparral, and where it is cultivated in urban or farm areas.<br>    <br>    Tools: Metal tongs, sturdy bucket, possibly gloves.<br>    <br>    Cautions: Occasionally, people have experienced sickness after eating certain<br>    varieties of prickly pear. In some cases, this is due to a negative reaction to the<br>    mucilaginous quality. According to Dr. Leonid Enari, the entire Cactus family is<br>    very safe for consumption. However, he would quickly add that some are much too<br>    woody for food. A very few are extremely bitter even after boiling and you\'d not<br>    even consider using them for food. If you choose to experiment, just remember that<br>    palatability is the key. Any that have a white sap when cut are not cacti, but lookalike<br>    members of the Euphorbia group.<br><br>    "},{"name":"Rose Hip","description":" Roses are a member of the Rose family (Rosacea), which contains 110 genera<br>    and 3,000 species worldwide. Species from forty-five of the genera are found in<br>    California. There are about 100 species of Rosa worldwide, which hybridize freely.<br>    There are twelve species in California, not including subspecies. Nine of these are<br>    natives, including the common Rosa californica.<br>    <br>    Wild roses are thorny shrubs bearing commonly recognized, five-<br>    petaled roses that form into orange fruits.<br>    <br>    Uses: The fruits are eaten raw, cooked, made into jam, made into tea; the wood is<br>    useful for arrow shafts.<br>    <br>    Habitats: Typically riparian but found in many areas; cultivated roses are common<br>    in urban areas.<br>    <br>    Range: Wild roses are somewhat widespread throughout the state; cultivated<br>    garden roses can be found everywhere.<br>    <br>    Tools: Perhaps gloves.<br>    <br>    Caution: Before you go wild rose collecting in your neighbor\'s rose patch, you<br>    should attempt to find out if your neighbor uses any \\"miracle chemicals\\" to produce<br>    beautiful, bug-free roses. Some systemic fertilizers and pesticides could get you sick.<br>    If in doubt do without.<br>    <br>    "},{"name":"Salal","description":" Salal is a native shrub, with ovate leaves that are finely veined.<br>    The hanging lantern-type flowers make the relationship of the salal plant to the<br>    manzanita very clear. The flowers appear in a line along the stalk, and then as the<br>    berries develop, they are likewise in a line along the stalk. The berries are dark<br>    purple to more or less blue-black in color. When mature, the end of the fruit has<br>    what appears to be a five-point indented star.<br>    <br>    The plant is a low-growing to medium-size evergreen shrub, with either<br>    spreading or erect stalks. It grows in moist areas along the margins of the forests,<br>    in some cases being the most dominant plant. The leaves are alternate, ovate to<br>    elliptical, about 3 to 4 inches in length. The leaves are finely toothed, leathery, and<br>    conspicuously veined.<br>    <br>    Uses: Fruits are eaten.<br>    <br>    Habitats: Salal is found in mixed evergreen forests, redwood forests, and amid the<br>    northern coastal scrub. You typically won\'t find it in wetlands.<br>    <br>    Range: Salal is found generally along the coast, from the northern extremities of Los<br>    Angeles County northward.<br>    <br>    Tools: Just a container for collecting.<br>    "},{"name":"Blueberry","description":" Blueberry shrubs have alternate evergreen or deciduous leaves, which are<br>    broadly lance-shaped. The stems are trailing to erect. The flower\'s petals generally<br>    number four to five, with a corolla that is cup- or urn-shaped. The fruits are blue, <br>    can be large or small, and have flattened ends. Generally, the plants with the most<br>    desirable fruits are the smaller shrubs, about 3 feet tall, with larger, sweet, juicy blue<br>    berries measuring about ¼-to ½-inch in diameter.<br><br>    Uses: The fruits are edible.<br><br>    Habitats: Found in the woods, usually coniferous woods, in clearings, moist areas,<br>    and shaded areas.<br><br>    Range: Forest inhabitants, mostly found in the northern half of<br>    the state and into the Northwest.<br><br>    Tools: A basket.<br><br>    "},{"name":"Cranberry","description":" Cranberry shrubs have alternate evergreen or deciduous leaves, which are<br>    broadly lance-shaped. The stems are trailing to erect. The flower\'s petals generally<br>    number four to five, with a corolla that is cup- or urn-shaped. The fruits are bright red, <br>    can be large or small, and have flattened ends. Generally, the plants with the most<br>    desirable fruits are the smaller shrubs, about 3 feet tall, with larger, sweet, juicy red<br>    berries measuring about ¼-to ½-inch in diameter.<br><br>    Uses: The fruits are edible.<br><br>    Habitats: Found in the woods, usually coniferous woods, in clearings, moist areas,<br>    and shaded areas.<br><br>    Range: Forest inhabitants, mostly found in the northern half of<br>    the state and into the Northwest.<br><br>    Tools: A basket.<br><br>    "}]');
+
+    // Adds berry info to lookup
+    berryInfo.forEach(function (el) {
+        lookup[el.name] = el.description;
+    });
+
+
+</script>
+
 </body>
 </html>
