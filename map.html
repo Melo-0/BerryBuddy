@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+          integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+          crossorigin="anonymous"></script>
+  <title>BerryBuddy - Identify </title>
+  <link rel="icon" href="assets/berrybuddylogo.png" type="image/x-icon">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="nav-link  " aria-current="page" href="index.html">
+      <img class="navbar-brand" src="assets/berrybuddylogo.png" width="30px" height="42px"  ></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link  " aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " aria-current="page" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" href="identify.html">Identify</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  " aria-current="page" href="catalog.html">Catalog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active " aria-current="page" href="map.html">Map</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<h3 class="text-center mt-3 fw-bold ">Berries Map locations</h3>
+
+<div class="mapBox" style="height: 50rem">
+  <div id="map" class="mt-4 w-100 h-100  " style="margin: 0 auto" ></div>
+</div>
+
+<script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBdEJD_J8SC8WrBOuDKnLF4roFkWk_adE&callback=initMap"
+        defer
+></script>
+<script>
+  // Makes Map
+  function initMap() {
+    // The location of California
+    const caliLocation = { lat: 37.55099346448293, lng: -120.4590752424963 };
+    // Centered map at California
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 6,
+      center: caliLocation,
+    });
+    // Creates mark info tab
+    const infoWindow = new google.maps.InfoWindow();
+
+    // Gets data file
+    fetch('./data.json')
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              for (let i = 0; i < data.length; i++) {
+                console.log(data[i]['title']);
+                // Sets marker for each berry locations saved
+                let mark = { lat: (data[i]['latitude']), lng: (data[i]['longitude']) };
+                const marker = new google.maps.Marker({
+                  position: mark,
+                  map: map,
+                  title: data[i]['title']
+                });
+                // Sets listeners to marker's info tab
+                marker.addListener("click", () => {
+                  infoWindow.close();
+                  infoWindow.setContent(marker.getTitle());
+                  infoWindow.open(marker.getMap(), marker);
+                });
+
+              }
+            })
+
+  }
+
+  window.initMap = initMap;</script>
+</body>
+</html>
